@@ -23,7 +23,7 @@ class Home extends React.Component {
   }
 
   sendText() {
-    axios.post('http://localhost:9000/sendText')
+    axios.post('https://trivia-texter-api.herokuapp.com/sendText')
   }
 
   handleSubmit(event) {
@@ -31,7 +31,7 @@ class Home extends React.Component {
     const user = {
       number: this.state.value
     };
-    axios.post('http://localhost:9000/firebaseSubscribe', { user })
+    axios.post('https://trivia-texter-api.herokuapp.com/firebaseSubscribe', { user })
       .then(res => {
         console.log(res.data);
       })

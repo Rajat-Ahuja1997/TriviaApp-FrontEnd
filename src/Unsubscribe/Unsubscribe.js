@@ -30,7 +30,7 @@ class Unsubscribe extends React.Component {
     const user = {
       number: this.state.value
     };
-    axios.post('http://localhost:9000/firebaseUnsubscribe', { user })
+    axios.post('https://trivia-texter-api.herokuapp.com/firebaseUnsubscribe', { user })
       .then(res => {
         this.setState({
           showUnsubscribe: true,

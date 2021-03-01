@@ -26,7 +26,7 @@ class About extends React.Component {
     const user = {
       number: this.state.value
     };
-    axios.post('http://localhost:9000/firebaseSubscribe', { user })
+    axios.post('https://trivia-texter-api.herokuapp.com', { user })
       .then(res => {
         console.log(res.data);
       })
