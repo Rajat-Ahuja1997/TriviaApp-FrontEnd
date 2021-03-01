@@ -1,0 +1,44 @@
+.Unsubscribe {
+    text-align: center;
+    background-color: #1e293f;
+    min-height: 100vh;
+  }
+  
+  .Unsubscribe-logo {
+    height: 30vmin;
+    pointer-events: none;
+    position: fixed;
+    bottom: 10%;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .Unsubscribe-logo {
+      animation: App-logo-spin infinite 5s linear;
+    }
+  }
+  
+  .Unsubscribe-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .unsubscribe-form {
+    position: fixed;
+    top: 50%;
+    left: 42%;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
