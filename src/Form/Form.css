@@ -1,0 +1,16 @@
+#inputForm {
+    display: inline-grid;;
+}
+
+#inputBar {
+    font-size: 20px;
+    border: none;
+    color: #44C4C9;  
+    padding:2px;
+    border-radius:10px;
+    margin-bottom: 5px;
+  }
+
+#inputButton {
+    border-radius:10px;
+}

@@ -5,6 +5,9 @@ import Navigation from '../Navigation';
 import Form from '../Form/Form';
 import {Alert} from 'react-bootstrap';
 import logo from '../logo.svg';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Unsubscribe extends React.Component {
@@ -41,21 +44,32 @@ class Unsubscribe extends React.Component {
 
   render() {
     return (
-        <div>
-        <div>
-          <Navigation/>
-          {this.state.showUnsubscribe && <Alert variant='info'>{this.state.unsubscribeMessage}</Alert>}
-          <div className="unsubscribe-form">
-            <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
+      <div className='App'>
+        <Container fluid>
+          <div>
+            <Navigation/>
+            {this.state.showUnsubscribe && <Alert variant='info'>{this.state.unsubscribeMessage}</Alert>}
           </div>
-        </div>
-        <div className="Unsubscribe">
-          <h1 style={{color:"white"}}>Unsubscribe</h1>
-          <header className="Unsubscribe-header">
-            <img src={logo} className="Unsubscribe-logo" alt="logo" />
-          </header>
-        </div> 
-        </div>
+          <Row id='topRow'>
+            <Col md={{span: 4, offset: 4}}>        
+              <div>
+              <h1 style={{color:"white"}}>Unsubscribe</h1>
+              <p>Enter your phone number to unsubscribe from TriviaTexter</p>
+              </div> 
+            </Col>
+          </Row>
+          <Row id='secondRow'>
+            <Col md={{span: 4, offset: 4}}>        
+            <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
+            </Col>
+          </Row>
+          <Row id='thirdRow'>
+            <Col md={{span: 4, offset: 5}}>
+              <img src={logo} className="App-logo" alt="logo" />
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   } 
 }

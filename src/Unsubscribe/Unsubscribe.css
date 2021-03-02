@@ -1,44 +1,41 @@
-.Unsubscribe {
-    text-align: center;
-    background-color: #1e293f;
-    min-height: 100vh;
-  }
+.App {
+  min-height: 100vh;
+  background-color: #44C4C9;
+  text-align: center;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  top: 70%;
+}
+
+p {
+  color: white;
+}
   
-  .Unsubscribe-logo {
-    height: 30vmin;
-    pointer-events: none;
-    position: fixed;
-    bottom: 10%;
-  }
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  position: fixed;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+}
   
-  @media (prefers-reduced-motion: no-preference) {
-    .Unsubscribe-logo {
-      animation: App-logo-spin infinite 5s linear;
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 10s ease;
   }
+}
   
-  .Unsubscribe-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .unsubscribe-form {
-    position: fixed;
-    top: 50%;
-    left: 42%;
+  to {
+    transform: rotate(360deg);
   }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
   
   

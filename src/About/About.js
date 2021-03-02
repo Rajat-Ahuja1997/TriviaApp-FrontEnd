@@ -1,8 +1,7 @@
 import React  from 'react';
-import axios from 'axios';
 import Navigation from '../Navigation';
 import './About.css';
-import Form from '../Form/Form';
+import RandomFact from '../RandomFact/RandomFact';
 
 class About extends React.Component {
   constructor(props) {
@@ -12,36 +11,8 @@ class About extends React.Component {
       value: "",
       name: "Rajat"
     }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value})
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const user = {
-      number: this.state.value
-    };
-    axios.post('https://trivia-texter-api.herokuapp.com', { user })
-      .then(res => {
-        console.log(res.data);
-      })
-  }
-
-  callAPI() {
-    return;
-    // fetch("http://localhost:9000/testAPI")
-    // .then(res => res.text())
-    // .then(res => this.setState({apiResponse: res}))
-  }
-  
-  componentDidMount() {
-    this.callAPI();
-  }
 
   render() {
     return (
