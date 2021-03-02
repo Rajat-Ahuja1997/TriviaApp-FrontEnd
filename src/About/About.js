@@ -1,7 +1,6 @@
 import React  from 'react';
 import Navigation from '../Navigation';
 import './About.css';
-import RandomFact from '../RandomFact/RandomFact';
 
 class About extends React.Component {
   constructor(props) {

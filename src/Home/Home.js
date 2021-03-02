@@ -53,7 +53,7 @@ class Home extends React.Component {
   }
 
   retrieveRandomFact() {
-    axios.get('http://localhost:9000/retrieveFact')
+    axios.get('https://trivia-texter-api.herokuapp.com/retrieveFact')
     .then(res => {
         this.setState({triviaFact: res.data});
     });
