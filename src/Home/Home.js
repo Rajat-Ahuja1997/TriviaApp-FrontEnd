@@ -62,6 +62,7 @@ class Home extends React.Component {
   componentDidMount() {
     this.retrieveRandomFact();
     console.log(process.env.NODE_ENV);
+    console.log('deploying');
   }
 
   render() {
