@@ -84,7 +84,7 @@ class Home extends React.Component {
               <div>
                 <h1>Subscribe</h1>
                 <p>Enter your phone number to subscribe for a daily trivia fact from TriviaTexter!</p>
-                <button onClick={this.sendText}>Send Text</button>
+                {/* <button onClick={this.sendText}>Send Text</button> */}
               </div> 
             </Col>
           </Row>
