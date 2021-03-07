@@ -10,6 +10,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+let baseUrl;
+if (process.env.NODE_ENV == 'development') {
+  baseUrl = 'localhost:9000/';
+} else {
+  baseUrl = 'https://trivia-texter-api.herokuapp.com/';
+}
+
 class Unsubscribe extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +40,9 @@ class Unsubscribe extends React.Component {
     const user = {
       number: this.state.value
     };
-    axios.post('https://trivia-texter-api.herokuapp.com/firebaseUnsubscribe', { user })
+
+    let url = baseUrl + 'firebaseUnsubscribe';
+    axios.post(url, { user })
       .then(res => {
         this.setState({
           showUnsubscribe: true,

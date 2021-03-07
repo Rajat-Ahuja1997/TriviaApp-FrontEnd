@@ -9,6 +9,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
+let baseUrl;
+if (process.env.NODE_ENV == 'development') {
+  baseUrl = 'localhost:9000/';
+} else {
+  baseUrl = 'https://trivia-texter-api.herokuapp.com/';
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +36,8 @@ class Home extends React.Component {
   }
 
   sendText() {
-    axios.post('https://trivia-texter-api.herokuapp.com/sendText')
+    let url = baseUrl + 'sendText'
+    axios.post(url)
   }
 
   showAnswer() {
@@ -46,14 +54,15 @@ class Home extends React.Component {
     const user = {
       number: this.state.value
     };
-    axios.post('https://trivia-texter-api.herokuapp.com/firebaseSubscribe', { user })
-      .then(res => {
-        console.log(res.data);
-      })
+
+    let url = baseUrl + 'firebaseSubscribe';
+    axios.post(url, { user })
   }
 
   retrieveRandomFact() {
-    axios.get('https://trivia-texter-api.herokuapp.com/retrieveFact')
+
+    let url = baseUrl + 'retrieveFact';
+    axios.get(url)
     .then(res => {
         this.setState({triviaFact: res.data});
     });
@@ -61,8 +70,6 @@ class Home extends React.Component {
   
   componentDidMount() {
     this.retrieveRandomFact();
-    console.log(process.env.NODE_ENV);
-    console.log('deploying');
   }
 
   render() {
